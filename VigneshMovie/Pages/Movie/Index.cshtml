@@ -10,52 +10,52 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].MovieName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Rating)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Year)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Movie)
-        {
+<table class="table table-bordered">
+    <thead class="thead-dark">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MovieName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.MovieId">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.MovieId">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.MovieId">Delete</a> |
-                    <a asp-page="/Reviews/Reviewformovie" asp-route-id="@item.MovieId">Review</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Movie[0].MovieName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Movie[0].Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Movie[0].Genre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Movie[0].Rating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Movie[0].Year)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Movie)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Year)
+                    </td>
+                    <td>
+                        <a class="btn btn-primary"asp-page="./Edit" asp-route-id="@item.MovieId">Edit</a> |
+                        <a class="btn btn-secondary"asp-page="./Details" asp-route-id="@item.MovieId">Details</a> |
+                        <a class="btn btn-danger"asp-page="./Delete" asp-route-id="@item.MovieId">Delete</a> |
+                        <a class="btn btn-success"asp-page="/Reviews/Reviewformovie" asp-route-id="@item.MovieId">Review</a>
+                    </td>
+                </tr>
+            }
+        </tbody>

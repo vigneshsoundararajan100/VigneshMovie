@@ -43,16 +43,12 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Movie.MovieId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
 </table>
-<table class="table">
-    <thead>
+<table class="table table-bordered">
+    <thead class="thead-dark">
         <tr>
             <th>
-            <!--  @Html.DisplayNameFor(model => model.Movie.MovieActor[0].Actor.ActorName)-->
+                @Html.DisplayNameFor(model => model.Movie.MovieActor[0].Actor.ActorName)
             </th>
             <th></th>
         </tr>
@@ -62,11 +58,15 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Actor.ActorName)
+                    <a asp-page="/Actors/Details" asp-route-id="@item.Actor.ActorId"> @Html.DisplayFor(modelItem=> item.Actor.ActorName)</a> 
+
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Movie.MovieId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
 
